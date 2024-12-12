@@ -81,7 +81,7 @@ function App() {
   const [videos, setVideos] = useState([]);
   const videoRefs = useRef([]);
   const [profilePic, setProfilePic] = useState(
-    "https://th.bing.com/th/id/OIP.Xw2rxMmQ9g2ZAFMjomWnHAAAAA?w=220&h=248&rs=1&pid=ImgDetMain"
+    "https://www.renderhub.com/deleon3d/plankton/plankton-01.jpg"
   );
   const [searchQuery, setSearchQuery] = useState('');  // State for search query
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0); // State for current video index
@@ -131,7 +131,7 @@ function App() {
     };
   }, [videos]);
 
-  // This function handles the reference of each video
+
   const handleVideoRef = (index) => (ref) => {
     videoRefs.current[index] = ref;
   };
@@ -150,7 +150,7 @@ function App() {
     video.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // Handle keydown event to switch user profiles
+ 
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'ArrowRight') {
@@ -167,7 +167,7 @@ function App() {
     };
   }, []);
 
-  // Handle swipe event to switch user profiles
+  
   const handlers = useSwipeable({
     onSwipedLeft: () => {
       setShowUserProfile(true);

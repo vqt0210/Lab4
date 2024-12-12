@@ -48,10 +48,10 @@ function FooterRight({ likes, comments, saves, shares, profilePic, onAvatarChang
         navigator.clipboard
           .writeText(videoUrl)
           .then(() => {
-            alert("Video link is copied to clipboard!");
+            alert("Video link is copied ");
           })
           .catch((err) => {
-            console.error("Failed to copy video link:", err);
+            console.error("Failed to copy link:", err);
           });
       }
       return !prev;

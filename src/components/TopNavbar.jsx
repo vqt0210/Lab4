@@ -6,10 +6,10 @@ const TopNavbar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isSearchVisible, setIsSearchVisible] = useState(false); // Track search visibility
 
-  // When search term changes, call onSearch
+  
   useEffect(() => {
     if (searchTerm === '') {
-      onSearch(''); // If the search term is empty, reset search results
+      onSearch(''); 
     }
   }, [searchTerm, onSearch]);
 
@@ -20,7 +20,7 @@ const TopNavbar = ({ onSearch }) => {
   const handleSearchKeyPress = (e) => {
     if (e.key === 'Enter') {
       if (onSearch) {
-        onSearch(searchTerm); // Call onSearch with the search term
+        onSearch(searchTerm); 
       }
     }
   };
@@ -30,13 +30,13 @@ const TopNavbar = ({ onSearch }) => {
   };
 
   const closeSearchBar = () => {
-    setIsSearchVisible(false); // Hide search bar
-    setSearchTerm(''); // Clear the search term immediately when closing
+    setIsSearchVisible(false); 
+    setSearchTerm(''); 
   };
 
   return (
     <div className="top-navbar">
-      {/* Biểu tượng faTv chỉ hiển thị khi search bar không hiển thị */}
+     
       {!isSearchVisible && <FontAwesomeIcon icon={faTv} className="icon" />}
       
       {!isSearchVisible && (
@@ -45,14 +45,14 @@ const TopNavbar = ({ onSearch }) => {
         </h2>
       )}
 
-      {/* Search icon, visible when the search bar is hidden */}
+      
       {!isSearchVisible && (
         <div className="search-icon" onClick={toggleSearchBar}>
           <FontAwesomeIcon icon={faSearch} />
         </div>
       )}
 
-      {/* Search input, visible when the search bar is toggled */}
+   
       {isSearchVisible && (
         <div className="search-container">
           <FontAwesomeIcon icon={faSearch} className="search-icon" />
@@ -67,7 +67,7 @@ const TopNavbar = ({ onSearch }) => {
           <FontAwesomeIcon
             icon={faTimes}
             className="close-icon"
-            onClick={closeSearchBar} // Close search bar and clear the search term
+            onClick={closeSearchBar} 
           />
         </div>
       )}
